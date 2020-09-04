@@ -11,8 +11,12 @@ namespace ZedCrest_Dev_Challenge.Services.Implementation
     {
         public Tuple<bool, string, int> Buzz(int number)
         {
-            // Is not a multiple of 3 and 5
-            if (IsMultiple(3, number))
+
+            if (IsMultiple(3, number) && IsMultiple(5, number))
+            {
+                return new Tuple<bool, string, int>(true, "FizzBuzz", 0);
+            }
+            else if (IsMultiple(3, number))
             {
                 return new Tuple<bool, string, int>(true, "Fizz", 0);
             }
@@ -20,10 +24,7 @@ namespace ZedCrest_Dev_Challenge.Services.Implementation
             {
                 return new Tuple<bool, string, int>(true, "Buzz", 0);
             }
-            else if (IsMultiple(3, number) && IsMultiple(5, number))
-            {
-                return new Tuple<bool, string, int>(true, "FizzBuzz", 0);
-            }
+           
             else if (!(IsMultiple(3, number) && IsMultiple(5, number)))
             {
                 return new Tuple<bool, string, int>(false, "", number);

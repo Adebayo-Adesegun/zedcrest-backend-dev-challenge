@@ -25,23 +25,23 @@ namespace ZedCrest_Dev_Challenge.Tests
         }
 
         /// <summary>
-        /// This test checks for all odd numbers between 1 and 100
+        /// This test checks for numbers that are multiple of 3
         /// </summary>
         [Fact]
-        public void CheckOddNumbers()
+        public void AreMultiplesofThree()
         {
-            List<int> GenerateOddNumbers = new List<int>();
+            List<int> multiplesOfThree = new List<int>();
             for (int i=3; i<=100; i+=3)
             {
-                GenerateOddNumbers.Add(i); // Add OddNumbers
+                multiplesOfThree.Add(i); // Add OddNumbers
             }
 
            
-            foreach(var oddNumber in GenerateOddNumbers)
+            foreach(var multiple in multiplesOfThree)
             {
                 Request req = new Request
                 {
-                    Number = oddNumber
+                    Number = multiple
                 };
 
                 var content = JsonConvert.SerializeObject(req);
@@ -49,9 +49,38 @@ namespace ZedCrest_Dev_Challenge.Tests
                 var response =  _client.PostAsync("/api/FizzBuzz", stringContent).Result;
 
                 var responseString = response.Content.ReadAsStringAsync().Result;
-                var registered = JsonConvert.DeserializeObject<Response<string>>(responseString);
+                var buzzy = JsonConvert.DeserializeObject<Response<string>>(responseString);
 
-                Assert.Equal("Fizz", registered.Data);
+                Assert.True(buzzy.Data == "Fizz" || buzzy.Data == "FizzBuzz", "Failed");
+            }
+        }
+
+
+        [Fact]
+        public void AreMultiplesOfFive()
+        {
+            List<int> multiplesOfFive = new List<int>();
+            for (int i = 5; i <= 100; i += 5)
+            {
+                multiplesOfFive.Add(i); // Add OddNumbers
+            }
+
+
+            foreach (var multiple in multiplesOfFive)
+            {
+                Request req = new Request
+                {
+                    Number = multiple
+                };
+
+                var content = JsonConvert.SerializeObject(req);
+                var stringContent = new StringContent(content, Encoding.UTF8, "application/json");
+                var response = _client.PostAsync("/api/FizzBuzz", stringContent).Result;
+
+                var responseString = response.Content.ReadAsStringAsync().Result;
+                var buzzy = JsonConvert.DeserializeObject<Response<string>>(responseString);
+
+                Assert.True(buzzy.Data == "Buzz" || buzzy.Data == "FizzBuzz", "Failed");
             }
         }
 
