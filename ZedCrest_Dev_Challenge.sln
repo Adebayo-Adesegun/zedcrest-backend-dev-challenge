@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZedCrest_Dev_Challenge", "ZedCrest_Dev_Challenge\ZedCrest_Dev_Challenge.csproj", "{59629E2D-68C4-4EA5-BDE9-A141D7ED9841}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZedCrest_Dev_Challenge.Tests", "ZedCrest_Dev_Challenge.Tests\ZedCrest_Dev_Challenge.Tests.csproj", "{1109F97E-0BB7-4A60-A6A3-1B2F39E759DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{59629E2D-68C4-4EA5-BDE9-A141D7ED9841}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59629E2D-68C4-4EA5-BDE9-A141D7ED9841}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59629E2D-68C4-4EA5-BDE9-A141D7ED9841}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1109F97E-0BB7-4A60-A6A3-1B2F39E759DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1109F97E-0BB7-4A60-A6A3-1B2F39E759DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1109F97E-0BB7-4A60-A6A3-1B2F39E759DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1109F97E-0BB7-4A60-A6A3-1B2F39E759DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
