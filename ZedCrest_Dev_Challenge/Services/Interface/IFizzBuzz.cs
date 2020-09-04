@@ -6,8 +6,8 @@ using Microsoft.Extensions.Logging;
 
 namespace ZedCrest_Dev_Challenge.Services.Interface
 {
-    interface IFizzBuzz
+    public interface IFizzBuzz
     {
-        Tuple<bool, string, long> Buzz(long number);
+        Tuple<bool, string, int> Buzz(int number);
     }
 }
